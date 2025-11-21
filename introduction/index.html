@@ -3,6 +3,31 @@
 <head>
 <title>Page Title</title>
 <link rel="stylesheet" href="css/mystyle.css">
+<script>
+const images = [
+    "lans1.jpg",
+    "lans2.jpg",
+    "lans3.jpg"
+];
+
+let index = 0;
+
+function updImg() {
+    document.getElementById("pic").src = images[index];
+}
+
+function nextImg() {
+    index++;
+    if (index >= images.length) index = 0;
+    updImg();
+}
+
+function prevImg() {
+    index--;
+    if (index < 0) index = images.length - 1;
+    updImg();
+}
+</script>
 </head>
 <body>
  
@@ -53,7 +78,9 @@
 </div>
 
 <div class="Gallery">
- <img src="https://preview.redd.it/zvq5w7o2you01.jpg?auto=webp&s=f77e8ecd527f715e384cefd85b8c40a1bc14e9bc" alt="Panda" width="500" height="600">
+ <button class="leftbtn" onclick="prevImg()">←</button>
+ <img id="pic" src="https://preview.redd.it/zvq5w7o2you01.jpg?auto=webp&s=f77e8ecd527f715e384cefd85b8c40a1bc14e9bc" alt="Lance Gallery" width="500" height="600">
+ <button class="rightbtn" onclick="nextImg()">→</button>
 </div>
 
  
