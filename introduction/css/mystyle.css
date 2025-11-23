@@ -12,5 +12,8 @@ h1 {
 }
 .header{
   background-color: rgba(180, 179, 179, 0.5);
-  padding: 10px;
+  padding: 50px;
+}
+h1{
+  color: rgb(233, 211, 183);
 }
