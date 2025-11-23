@@ -17,7 +17,7 @@ hr{
   padding: 10px;
   margin: 10px;
   height: 150px;
-  width: 700px;
+  width: 1000px;
   color:gray;
 }
 h3{
@@ -47,4 +47,13 @@ h4{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.cn2{
+  background-color: rgba(255, 254, 254, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  height: 150px;
+  width: 1000px;
+  color:gray;
 }
