@@ -4,6 +4,7 @@ body {
 }
 h1 {
   color: rgb(233, 211, 183);
+  box-shadow: 2px 2px gray;
 }
 hr{
   background-color: rgba(255, 255, 255, 0.514);
@@ -13,6 +14,8 @@ hr{
   border-radius: 10px;
 }
 .header{
-  background-color: rgba(180, 179, 179, 0.5);
-  padding: 50px;
+  background-color: rgba(180, 179, 179, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0px;
 }
