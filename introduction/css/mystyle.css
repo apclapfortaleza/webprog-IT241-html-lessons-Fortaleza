@@ -4,7 +4,7 @@ body {
 }
 h1 {
   color: rgb(233, 211, 183);
-  box-shadow: 2px 2px gray;
+  text-shadow: 2px 2px gray;
 }
 hr{
   background-color: rgba(255, 255, 255, 0.514);
