@@ -1,5 +1,6 @@
 body {
   background-color: lightblue;
+  overflow: hidden;
 }
 h1 {
   color: navy;
@@ -10,6 +11,6 @@ h1 {
   border-radius: 10px;
 }
 .header{
-  background-color: rgba(180, 179, 179, 0.384);
-  
+  background-color: rgba(180, 179, 179, 0.5);
+  padding: 10px;
 }
