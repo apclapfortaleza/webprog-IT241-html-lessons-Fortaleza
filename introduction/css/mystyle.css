@@ -1,21 +1,25 @@
 body {
-  background-color: lightblue;
+  background-color: rgb(222, 233, 236);
   overflow: hidden;
 }
 h1 {
-  color: rgb(233, 211, 183);
-  text-shadow: 2px 2px gray;
+  color: rgb(252, 206, 145);
+  text-shadow: 2px 2px rgba(128, 128, 128, 0.575);
 }
 hr{
   background-color: rgba(255, 255, 255, 0.514);
+  margin: 0;
 }
 .cn1{
   background-color: rgba(180, 179, 179, 0.3);
   border-radius: 10px;
 }
 .header{
-  background-color: rgba(180, 179, 179, 0.3);
+  background-color: rgba(255, 254, 254, 0.3);
   border-radius: 10px;
   padding: 10px;
   margin: 0px;
+}
+h4{
+  margin: 2px;
 }
