@@ -12,12 +12,21 @@ hr{
   margin: 0;
 }
 .cn1{
-  background-color: rgba(180, 179, 179, 0.3);
+  background-color: rgba(255, 255, 255, 0.514);
   border-radius: 10px;
   padding: 10px;
-  margin: 2px;
-  height: 200px;
-  width: 500px;
+  margin: 10px;
+  height: 150px;
+  width: 700px;
+  color:gray;
+}
+h3{
+  color: rgb(252, 244, 217);
+  text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.575);
+  border-bottom: 2px solid gray; 
+  font-size: 24px;
+  margin-top: 2px ;
+  margin-bottom: 2px ;
 }
 .header{
   background-color: rgba(255, 254, 254, 0.3);
@@ -32,5 +41,6 @@ h4{
 .g1{
   display: flex;
   align-items: center;
-  
+  justify-content: center;
+
 }
