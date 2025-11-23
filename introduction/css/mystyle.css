@@ -3,8 +3,9 @@ body {
   overflow: hidden;
 }
 h1 {
-  color: rgb(252, 206, 145);
-  text-shadow: 2px 2px rgba(128, 128, 128, 0.575);
+  color: rgb(252, 244, 217);
+  text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.575);
+  margin-bottom: 2px;
 }
 hr{
   background-color: rgba(255, 255, 255, 0.514);
@@ -13,6 +14,10 @@ hr{
 .cn1{
   background-color: rgba(180, 179, 179, 0.3);
   border-radius: 10px;
+  padding: 10px;
+  margin: 2px;
+  height: 200px;
+  width: 500px;
 }
 .header{
   background-color: rgba(255, 254, 254, 0.3);
@@ -22,4 +27,10 @@ hr{
 }
 h4{
   margin: 2px;
+  color:gray;
+}
+.g1{
+  display: flex;
+  align-items: center;
+  
 }
