@@ -15,7 +15,6 @@ hr{
   border-radius: 10px;
   padding: 20px;
   margin: 10px;
-  height: 150px;
   width: 49%;
   color:gray;
 }
@@ -44,14 +43,14 @@ h4{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 }
 .g2{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 }
 .cn2{
