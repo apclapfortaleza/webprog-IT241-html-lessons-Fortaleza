@@ -16,8 +16,11 @@ hr{
   padding: 20px;
   margin: 10px;
   height: 150px;
-  width: 48%;
+  width: 49%;
   color:gray;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 h3{
   color: rgb(252, 244, 217);
