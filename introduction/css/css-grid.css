@@ -32,16 +32,17 @@ h3{
   border-radius: 10px;
   padding: 10px;
   margin: 0px;
+  grid-area: header;
 }
 h4{
   margin: 2px;
   color:gray;
 }
 .g1{
-
+grid-area: content1;
 }
 .g2{
-
+grid-area: content2;
 }
 .cn2{
   background-color: rgba(255, 254, 254, 0.3);
@@ -51,4 +52,13 @@ h4{
   height: 450px;
   width: 98%;
   color:gray;
+  grid-area:footer;
+}
+.container{
+  display:grid;
+    grid-template-areas:
+    "header header"
+    "content1  content2 "
+    "footer footer";
+   grid-auto-rows: auto;
 }
