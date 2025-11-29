@@ -61,7 +61,7 @@ grid-area: content2;
     "content1  content2" 1fr
     "footer footer" /
      1 fr 1fr;
-     gap: 12px;
+     gap: 2px;
      max-width: 1100px; 
      margin: 0 auto;
    grid-auto-rows: auto;
