@@ -57,8 +57,12 @@ grid-area: content2;
 .container{
   display:grid;
     grid-template-areas:
-    "header header"
-    "content1  content2 "
-    "footer footer";
+    "header header" auto 
+    "content1  content2" 1fr
+    "footer footer" /
+     1 fr 1fr;
+     gap: 12px;
+     max-width: 1100px; 
+     margin: 0 auto;
    grid-auto-rows: auto;
 }
