@@ -1,3 +1,6 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 body {
   background-color: rgb(222, 233, 236);
   padding:10px;
@@ -21,7 +24,7 @@ hr{
   padding: 20px;
   margin: 0 10px 0 10px;
   color:gray;
-  height: 175px;
+  flex-grow: 1;
 }
 
 h3{
@@ -54,15 +57,14 @@ grid-area: content2;
   flex-direction: column;
   gap: 15px;
   align-items: stretch;
-  margin-top: 10px;
+  padding: 10px 0;
 }
 .cn2{
   background-color: rgba(255, 254, 254, 0.3);
   border-radius: 10px;
   padding: 10px;
-  margin: 10px;
   min-height: 350px;
-  width: 96%;
+  width: 100%;
   color:gray;
   grid-area:footer;
 }
@@ -106,7 +108,7 @@ grid-area: content2;
   justify-content: center;
   gap: 15px;
   margin-top: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 @media (max-width: 768px) {
@@ -122,29 +124,25 @@ grid-area: content2;
   .galcontent {
     flex-direction: flex;
   }
+  #pic {
+    max-width: 60%;
+  }
 }
 @media (max-width: 480px) {
   body {
     padding: 5px;
   }
-  
-  .g1, .g2 {
-    gap: 10px; 
-    padding: 5px 0; 
-  }
-
   .cn1 {
-    padding: 15px; 
-    margin: 0 5px; 
+    padding: 15px;
   }
-  
-  #pic {
-    max-width: 90%;
+  .g1, .g2 {
+    gap: 10px;
+    padding: 5px 0;
   }
-
   .btn {
-    width: 45px;
-    padding: 10px;
     font-size: 20px;
+    padding: 10px;
+    width: 50px;
   }
 }
+
