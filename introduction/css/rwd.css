@@ -19,8 +19,9 @@ hr{
   background-color: rgba(255, 254, 254, 0.3);
   border-radius: 10px;
   padding: 20px;
-  margin: 10px;
+  margin: 0 10px 0 10px;
   color:gray;
+  height: 175px;
 }
 
 h3{
@@ -44,16 +45,16 @@ h4{
 }
 .g1{
 grid-area: content1;
-justify-content: space-around;
 }
 .g2{
 grid-area: content2;
-justify-content: space-around;
 }
 .g1, .g2 {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: stretch;
+  margin-top: 10px;
 }
 .cn2{
   background-color: rgba(255, 254, 254, 0.3);
@@ -61,7 +62,7 @@ justify-content: space-around;
   padding: 10px;
   margin: 10px;
   min-height: 350px;
-  width: 100%;
+  width: 96%;
   color:gray;
   grid-area:footer;
 }
@@ -119,6 +120,31 @@ justify-content: space-around;
   }
 
   .galcontent {
-    flex-direction: column;
+    flex-direction: flex;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
+  
+  .g1, .g2 {
+    gap: 10px; 
+    padding: 5px 0; 
+  }
+
+  .cn1 {
+    padding: 15px; 
+    margin: 0 5px; 
+  }
+  
+  #pic {
+    max-width: 90%;
+  }
+
+  .btn {
+    width: 45px;
+    padding: 10px;
+    font-size: 20px;
   }
 }
