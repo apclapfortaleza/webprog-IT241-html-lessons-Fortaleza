@@ -13,7 +13,7 @@ const app = createApp({
               image: 'css/assets/delivery.png',
               media: [
                     { type: 'youtube', src: 'https://www.youtube.com/embed/CfkjJd6pFHY', alt: 'Delivery Ad Demo Video' },
-                    { type: 'video', src: 'css/assets/pr2.mp4', alt: 'Delivery Ad 2 Video' }
+                    { type: 'youtube', src: 'https://www.youtube.com/embed/cY8D7BRjUfk', alt: 'Delivery Ad 2 Video' }
                 ] 
             },
 
@@ -53,6 +53,8 @@ const app = createApp({
                 ] 
             }
         ]);
+
+        
 
         const shatterText = (el) => {
             if (!el) return;

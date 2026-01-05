@@ -28,7 +28,8 @@
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link" href="#about">Who</a></li>
                         <li class="nav-item"><a class="nav-link" href="#edu">Education</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#exp">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#exp">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#hob">Hobbies</a></li>
                     </ul>
                 </div>
             </div>
@@ -116,7 +117,7 @@
                             </div>
 
                             <div class="exp-details-panel w-100" v-if="activeProject">
-                                <div class="details-content mx-auto" style="max-width: 900px;">
+                                <div class="details-content mx-auto" :key="activeProject.id">
                                     <h2 class="display-5 fw-bold">{{ activeProject.title }}</h2>
                                     <p class="lead text-muted">{{ activeProject.subtitle }}</p>
                                     <p class="lead mb-4">{{ activeProject.desc }}</p>
@@ -127,9 +128,13 @@
                                                 <div class="carousel-inner shadow-lg rounded">
                                                     <div v-for="(item, index) in activeProject.media" :key="index" :class="['carousel-item', { 'active': index === 0 }]">
                                                         <div class="media-wrapper">
-                                                            <template v-if="item.type === 'image'">
-                                                                <img :src="item.src" :alt="item.alt" class="d-block w-100">
-                                                            </template>
+                                                        <template v-if="item.type === 'image'">
+                                                            <img :src="item.src" 
+                                                                 :alt="item.alt" 
+                                                                 class="d-block w-100" 
+                                                                 loading="lazy"
+                                                                 @load="onImageLoad">
+                                                        </template>
 
                                                             <template v-else-if="item.type === 'youtube'">
                                                                 <div class="ratio ratio-16x9">
@@ -186,7 +191,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script2.js"></script>
 </body>
 
 </html>
