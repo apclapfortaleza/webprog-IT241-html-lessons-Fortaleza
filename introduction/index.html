@@ -111,7 +111,7 @@
 
                             <div class="exp-details-panel" v-show="activeProject">
                                 <div class="details-content" v-if="activeProject">
-                                    <h2 class="display-5 fw-bold">{{ activeProject.title }}</h2>
+                                    <h2 class="display-5 fw-bold" v-text="activeProject.title></h2>
                                     <p class="lead text-muted">{{ activeProject.subtitle }}</p>
                                     <p class="lead mb-4">{{ activeProject.desc }}</p>
 
