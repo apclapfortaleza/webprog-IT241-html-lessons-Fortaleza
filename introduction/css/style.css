@@ -12,9 +12,6 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
-[v-cloak] {
-    display: none;
-}
 #particle-canvas {
     position: fixed;
     top: 0;
@@ -373,8 +370,8 @@ body {
     background: transparent;    
     line-height: 0;
     
-    /* Ensure consistent height for carousel items */
-    height: 400px; 
+    height: auto !important;    
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -389,16 +386,46 @@ body {
     object-fit: contain; 
     border-radius: 12px;
 }
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000; 
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 
 .carousel-item {
     background: transparent !important;
 }
-
+.carousel-custom-container {
+    max-width: 900px !important; /* Made wider to accommodate outer arrows */
+    padding: 0 60px; /* Room for the buttons */
+    position: relative;
+}
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     filter: invert(1); 
     width: 2rem;
     height: 2rem;
+}
+.carousel-custom-container .carousel-control-prev {
+    left: 0;
+    width: 50px;
+}
+.carousel-custom-container .carousel-control-next {
+    right: 0;
+    width: 50px;
 }
 
 .custom-prev { left: -50px; opacity: 0.5; width: 40px; }
@@ -412,6 +439,7 @@ body {
         background-color: rgba(255, 255, 255, 0.8);
         border-radius: 50%;
         filter: none;
+        
     }
 }
 

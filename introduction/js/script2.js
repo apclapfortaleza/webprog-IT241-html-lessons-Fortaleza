@@ -12,7 +12,7 @@ const app = createApp({
               desc: 'A simple mobile delivery app featuring real-time tracking, order management, and a seamless checkout experience.', 
               image: 'css/assets/delivery.png',
               media: [
-                    { type: 'video', src: 'css/assets/pr1.mp4', alt: 'Delivery Ad Demo Video' },
+                    { type: 'youtube', src: 'https://www.youtube.com/embed/CfkjJd6pFHY', alt: 'Delivery Ad Demo Video' },
                     { type: 'video', src: 'css/assets/pr2.mp4', alt: 'Delivery Ad 2 Video' }
                 ] 
             },
@@ -29,7 +29,7 @@ const app = createApp({
                 title: 'Voice Assisted E-Book', 
                 subtitle: 'Accessibility-focused Reading', 
                 desc: 'A simple python code with voice commands and text-to-speech technology.', 
-                image: 'css/assets/ebook.png' 
+                image: 'css/assets/Ebook.png' 
             },
             { 
                 id: 'shoes', 
@@ -72,15 +72,19 @@ const app = createApp({
                 const dynamicTitle = document.querySelector('.details-content h2');
                 shatterText(dynamicTitle);
 
-                const carouselEl = document.querySelector('.carousel');
-                if (carouselEl && window.bootstrap) {
-                   const carouselInstance = bootstrap.Carousel.getOrCreateInstance(carouselEl, {
-                        interval: false, // No timer
-                        ride: false      // No auto-start
-                    });
-                    carouselInstance.pause();
-                }
-            }
+const carouselEl = document.querySelector('.carousel');
+        if (carouselEl && window.bootstrap) {
+            // Remove any old instance to prevent "ghost" carousels
+            const oldInstance = bootstrap.Carousel.getInstance(carouselEl);
+            if (oldInstance) oldInstance.dispose();
+
+            // Create fresh instance for the new project
+            bootstrap.Carousel.getOrCreateInstance(carouselEl, {
+                interval: false,
+                ride: false
+            });
+        }
+    }
         });
 
         const selectProject = (project) => {
@@ -103,10 +107,15 @@ function initLocalVideoPauser() {
     const expSection = document.getElementById('exp');
     
     expSection.addEventListener('slide.bs.carousel', function () {
+        // Stop local MP4s
         const videos = expSection.querySelectorAll('video');
-        
-        videos.forEach(video => {
-            video.pause();
+        videos.forEach(video => video.pause());
+
+        // Stop YouTube Iframes by refreshing their src
+        const iframes = expSection.querySelectorAll('iframe');
+        iframes.forEach(iframe => {
+            const src = iframe.src;
+            iframe.src = src; 
         });
     });
 }
