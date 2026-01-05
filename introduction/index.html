@@ -1,90 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lance's Personal Website</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body>
-    <div class="cursor-shadow"></div>
+    <div id="app">
+        <canvas id="particle-canvas"></canvas>
+        <div class="cursor-shadow"></div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-        <div class="container">
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#about">Who</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#edu">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#exp">Experience</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main class="stack-wrapper">
-        <section class="content-section" id="about">
-            <div class="container h-100 d-flex align-items-center">
-                <div class="row align-items-center w-100 flex-column-reverse flex-lg-row">
-                    <div class="col-lg-7 about text-center text-lg-start mt-5 mt-lg-0">
-                        <h1 class="display-2 fw-bold">Hello! I'm Lance Art</h1>
-                        <p class="lead ms-lg-3">My name is Lance Art P. Fortaleza and I am an inspiring full-stack developer!</p>
-                        
-                        <div class="social-links ms-lg-3 d-flex justify-content-center justify-content-lg-start gap-3">
-                            <a href="https://github.com/apclapfortaleza"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/lance-art-fortaleza-47299b321"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://www.facebook.com/boszlance23/"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/lnzlart/"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 d-flex justify-content-center position-relative">
-                        <div class="profile-circle"></div>
-                    </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+            <div class="container">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#about">Who</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#edu">Education</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#exp">Experience</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </nav>
 
-        <section class="content-section bg-light border-top border-bottom" id="edu">
-            <div class="container h-100 d-flex align-items-center">
-                <div class="row w-100 align-items-center">
-                    <div class="col-lg-5 d-none d-lg-flex justify-content-center">
-                        <div class="edu-image-wrapper">
-                            <img src="css/assets/apc.jpg" id="edu-display-img" class="img-fluid rounded shadow-lg" alt="Education">
-                        </div>
-                    </div>
+        <main class="stack-wrapper">
+            <section class="content-section" id="about">
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="row align-items-center w-100 flex-column-reverse flex-lg-row">
+                        <div class="col-lg-7 about text-center text-lg-start mt-5 mt-lg-0">
+                            <h1 class="display-2 fw-bold">Hello! I'm Lance Art</h1>
+                            <p class="lead ms-lg-3">My name is Lance Art P. Fortaleza and I am an inspiring full-stack developer!</p>
 
-                    <div class="col-lg-7 text-center text-lg-start">
-                        <div class="d-flex align-items-center justify-content-center justify-content-lg-start mb-4">
-                            <h2 class="display-3 fw-bold mb-0">Education</h2>
-                            <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUycXJrNm94MnRqN2t3aDdybGZ4OHV1ZHRuYThtc3Vtb3JjYWx1NmN0ZyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/C0L6c8KLHAiY0/200w.gif" alt="icon" class="header-gif ms-3">
+                            <div class="social-links ms-lg-3 d-flex justify-content-center justify-content-lg-start gap-3">
+                                <a href="https://github.com/apclapfortaleza"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/lance-art-fortaleza-47299b321"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="https://www.facebook.com/boszlance23/"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/lnzlart/"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
                         </div>
-                        <ul class="list-unstyled custom-list">
-                            <li class="mb-3" data-image="css/assets/apc.jpg">
-                                <i class="fas fa-university me-2"></i>
-                                Currently taking <strong>Bachelor of Information Technology</strong> at Asia Pacific College
-                            </li>
-                            <li class="mb-3" data-image="css/assets/sti.jpg">
-                                <i class="fas fa-code me-2"></i>
-                                Senior Highschool <strong>'Mobile App & Web Development'</strong> graduate at STI Pasay-EDSA
-                            </li>
-                            <li class="mb-3" data-image="css/assets/apec.jpg">
-                                <i class="fas fa-graduation-cap me-2"></i>
-                                Highschool graduate at APEC Schools Roxas
-                            </li>
-                        </ul>
+                        <div class="col-lg-5 d-flex justify-content-center position-relative">
+                            <div class="profile-circle"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+
+            <section class="content-section bg-light border-top border-bottom" id="edu">
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="row w-100 align-items-center">
+                        <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+                            <div class="edu-image-wrapper">
+                                <img src="css/assets/apc.jpg" id="edu-display-img" class="img-fluid rounded shadow-lg" alt="Education">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7 text-center text-lg-start">
+                            <div class="d-flex align-items-center justify-content-center justify-content-lg-start mb-4">
+                                <h2 class="display-3 fw-bold mb-0">Education</h2>
+                                <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUycXJrNm94MnRqN2t3aDdybGZ4OHV1ZHRuYThtc3Vtb3JjYWx1NmN0ZyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/C0L6c8KLHAiY0/200w.gif" alt="icon" class="header-gif ms-3" style="width: 50px;">
+                            </div>
+                            <ul class="list-unstyled custom-list">
+                                <li class="mb-3" data-image="css/assets/apc.jpg">
+                                    <i class="fas fa-university me-2"></i>
+                                    Currently taking <strong>Bachelor of Information Technology</strong> at Asia Pacific College
+                                </li>
+                                <li class="mb-3" data-image="css/assets/sti.jpg">
+                                    <i class="fas fa-code me-2"></i>
+                                    Senior Highschool <strong>'Mobile App & Web Development'</strong> graduate at STI Pasay-EDSA
+                                </li>
+                                <li class="mb-3" data-image="css/assets/apec.jpg">
+                                    <i class="fas fa-graduation-cap me-2"></i>
+                                    Highschool graduate at APEC Schools Roxas
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="exp">
+                <div class="blob-container">
+                    <div class="blob"></div>
+                    <div class="blob"></div>
+                    <div class="blob"></div>
+                </div>
+
+                <div class="container h-100 d-flex flex-column justify-content-center">
+                    <div class="exp-layout-wrapper w-100" :class="{'show-details': activeProject}">
+
+                        <div class="portfolio-header mb-4">
+                            <h2 class="display-3 fw-bold mb-0">Portfolio</h2>
+                        </div>
+
+                        <div class="exp-content-body d-flex flex-column flex-lg-row">
+                            <div class="exp-icons-container d-flex">
+                                <div v-for="project in projects" :key="project.id" class="exp-item mb-3" :class="{ active: activeProject && activeProject.id === project.id }" @mouseenter="selectProject(project)">
+                                    <img :src="project.image" :alt="project.title">
+                                </div>
+                            </div>
+
+                            <div class="exp-details-panel" v-show="activeProject">
+                                <div class="details-content" v-if="activeProject">
+                                    <h2 class="display-5 fw-bold">{{ activeProject.title }}</h2>
+                                    <p class="lead text-muted">{{ activeProject.subtitle }}</p>
+                                    <p class="lead mb-4">{{ activeProject.desc }}</p>
+
+                                    <div class="project-media-gallery mt-4">
+
+                                        <template v-if="activeProject.media && activeProject.media.length > 1">
+                                            <div :id="'projectCarousel-' + activeProject.id" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+                                                <div class="carousel-inner">
+                                                    <div v-for="(item, index) in activeProject.media" :key="index" :class="['carousel-item', { 'active': index === 0 }]">
+                                                        <div class="media-wrapper">
+                                                            <template v-if="item.type === 'image'">
+                                                                <img :src="item.src" :alt="item.alt">
+                                                            </template>
+                                                            <template v-else-if="item.type === 'video'">
+                                                                <video controls class="local-video">
+                                                                    <source :src="item.src" type="video/mp4">
+                                                                    Your browser does not support the video tag.
+                                                                </video>
+                                                            </template>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <button class="carousel-control-prev custom-prev" type="button" :data-bs-target="'#projectCarousel-' + activeProject.id" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next custom-next" type="button" :data-bs-target="'#projectCarousel-' + activeProject.id" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+                                        </template>
+
+                                        <template v-else-if="activeProject.media && activeProject.media.length === 1">
+                                            <div class="media-wrapper">
+                                                <template v-if="activeProject.media[0].type === 'image'">
+                                                    <img :src="activeProject.media[0].src" class="img-fluid" :alt="activeProject.media[0].alt">
+                                                </template>
+                                                <template v-else-if="activeProject.media[0].type === 'video'">
+                                                    <video controls class="local-video">
+                                                        <source :src="activeProject.media[0].src" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                </template>
+                                            </div>
+                                        </template>
+
+                                    </div> </div>
+                            </div> </div> </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
