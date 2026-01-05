@@ -1,7 +1,9 @@
 /* --- GLOBAL STYLES --- */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 70px; 
+    scroll-padding-top: 70px;
+    max-width: 100%;
+    overflow-x: hidden; 
 }
 #app {
     width: 100%;
@@ -26,6 +28,11 @@ body {
 .bop-letter {
     display: inline-block;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    white-space: pre;
+}
+h1, h2 {
+    overflow-wrap: break-word;
+    word-break: keep-all; 
 }
 .bop-letter:hover {
     transform: translateY(-15px) scale(1.3) rotate(5deg);
@@ -494,18 +501,23 @@ body {
     .exp-icons-container {
         display: flex !important;
         flex-wrap: nowrap !important; 
-        overflow-x: auto;            
-        padding: 15px 10px;
-        gap: 15px !important;
+        overflow-x: auto !important;
+        width: 100%;            
+        padding: 10px 5px;
+        gap: 12px !important;
         -webkit-overflow-scrolling: touch; 
         justify-content: flex-start !important; 
-        scrollbar-width: none;      
+        scrollbar-width: none;
+        box-sizing: border-box;      
+    }
+    .content-section, .container, .exp-layout-wrapper {
+        max-width: 100vw;
+        overflow-x: hidden;
     }
 
     .exp-icons-container::-webkit-scrollbar {
         display: none;              
     }
-
 
     .exp-item {
         flex: 0 0 70px;             
@@ -539,3 +551,14 @@ body {
         min-height: 250px;           
     }
 }
+@media (max-width: 576px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .stack-wrapper {
+        padding: 0 5px;
+    }
+}
+    
